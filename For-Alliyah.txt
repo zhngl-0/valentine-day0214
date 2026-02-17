@@ -1,0 +1,42 @@
+
+- Ano yung threshold nung sensors, calibrated ba?
+> i-ccalibrate pa lang
+
+- Paano yung sensor fusion? Malaki changes n'yan.
+> isesend ni sir ung logic
+
+
+ 
+
+- How do you train your AI?
+> Ittrain pa lang w a dataset
+- Local daw yung camera input.
+> Yes
+
+
+
+- Anong buzzer/lights for alert?
+> Yes
+
+
+- San ang build and test ng robot?
+> Miniature house
+
+- Anong type of fire? Paper? Candle?
+> Yes.
+
+
+
+- How many test trials?
+> 10 trials per condition with 3 conditions
+
+- What data will u get?
+> according to the variables
+
+- Anong statistics/tables/graphs ang gagawin?
+
+- Nasaan ang circuit diagrams and flowcharts?
+> Meron pero di pa nagagawa. Flowchart? Eh.
+
+
+
