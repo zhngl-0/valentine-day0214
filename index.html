@@ -1,78 +1,146 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Black</title>
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      background: #000;
-      color: #000;
-      border-color: #000;
-      font-family: Arial, sans-serif;
-    }
+<meta charset="UTF-8">
+<title>For Alliyah 💙</title>
 
+<style>
     body {
-      height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
+        margin: 0;
+        height: 100vh;
+        background: linear-gradient(135deg, #0a2540, #1e3a8a, #60a5fa);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-family: "Segoe UI", sans-serif;
+        color: #e0f2fe;
     }
 
-    .container {
-      width: 300px;
+    .card {
+        background: rgba(10, 25, 60, 0.85);
+        border-radius: 20px;
+        padding: 30px;
+        width: 360px;
+        box-shadow: 0 0 30px rgba(96, 165, 250, 0.4);
+        text-align: center;
     }
 
-    input, button {
-      width: 100%;
-      padding: 12px;
-      margin-top: 10px;
-      outline: none;
-      border: 1px solid #000;
-      background: #000;
-      color: #000;
+    h1 {
+        margin-bottom: 10px;
+        color: #bfdbfe;
+    }
+
+    p {
+        line-height: 1.6;
+        font-size: 15px;
+    }
+
+    input {
+        margin-top: 15px;
+        padding: 10px;
+        width: 80%;
+        border-radius: 10px;
+        border: none;
+        outline: none;
+        font-size: 14px;
+    }
+
+    button {
+        margin-top: 12px;
+        padding: 10px 20px;
+        border-radius: 12px;
+        border: none;
+        cursor: pointer;
+        background: #3b82f6;
+        color: white;
+        font-size: 14px;
+        transition: 0.3s;
+    }
+
+    button:hover {
+        background: #60a5fa;
     }
 
     .message {
-      margin-top: 20px;
-      display: none;
+        margin-top: 15px;
+        min-height: 20px;
+        font-style: italic;
+        color: #93c5fd;
     }
 
-    ::selection {
-      background: #000;
-      color: #000;
+    .hidden {
+        display: none;
     }
-  </style>
+
+    .letter {
+        margin-top: 15px;
+        color: #e0f2fe;
+    }
+</style>
 </head>
+
 <body>
 
-  <div class="container">
-    <input id="codeInput" type="text">
-    <button onclick="unlock()"></button>
+<div class="card">
+    <h1>💙 Happy Valentine's Day! 💙</h1>
 
-    <div class="message" id="message">
-      <p>
-        You found this because you knew the code.  
-        Even in total darkness, I choose you.  
-        Love doesn’t need light to exist.
-      </p>
+    <div id="lock">
+        <p>
+            This letter is wrapped in a soft blue hush.  
+            Only the right code can unfold it.
+        </p>
+
+        <input type="password" id="codeInput" placeholder="Enter the secret code">
+        <br>
+        <button onclick="checkCode()">Unlock</button>
+
+        <div class="message" id="feedback"></div>
     </div>
-  </div>
 
-  <script>
-    const correctCode = "SDGB-so-sarap";
+    <div id="letter" class="letter hidden">
+        <p>
+            Roses may lean red, but this one blooms blue.  
+            Calm like the sky, deep like the sea,  
+            and steady in ways words can’t always explain.
+        </p>
 
-    function unlock() {
-      const input = document.getElementById("codeInput").value;
-      const message = document.getElementById("message");
+        <p>
+            This Valentine isn’t loud.  
+            It stays.  
+            It listens.  
+            It chooses you, quietly and completely.
+        </p>
 
-      if (input === correctCode) {
-        message.style.display = "block";
-      }
+        <p>
+            💙 Happy Valentine’s Day 💙
+        </p>
+    </div>
+</div>
+
+<script>
+    const correctCode = "SDGBmasarap";
+    let attempt = 0;
+
+    const tryAgainMessages = [
+        "Not quite. Blue patience is still on your side.",
+        "Close, but the heart wants another try.",
+        "The lock hums softly. One more attempt?",
+        "Still sealed. Take a breath and try again."
+    ];
+
+    function checkCode() {
+        const input = document.getElementById("codeInput").value;
+        const feedback = document.getElementById("feedback");
+
+        if (input === correctCode) {
+            document.getElementById("lock").classList.add("hidden");
+            document.getElementById("letter").classList.remove("hidden");
+        } else {
+            feedback.textContent = tryAgainMessages[attempt % 4];
+            attempt++;
+        }
     }
-  </script>
+</script>
 
 </body>
 </html>
