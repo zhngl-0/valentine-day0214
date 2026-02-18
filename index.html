@@ -7,11 +7,8 @@
 <style>
     body {
         margin: 0;
-        height: 100vh;
         background: linear-gradient(135deg, #0a2540, #1e3a8a, #60a5fa);
-        display: flex;
         justify-content: center;
-        align-items: center;
         font-family: "Segoe UI", sans-serif;
         color: #e0f2fe;
     }
@@ -23,6 +20,9 @@
         width: 360px;
         box-shadow: 0 0 30px rgba(96, 165, 250, 0.4);
         text-align: center;
+    max-height: 90vh; /* prevents card from exceeding viewport height */
+    overflow-y: auto; /* allows vertical scroll if content is taller than the card */
+    margin: 50px auto;
     }
 
     h1 {
@@ -161,6 +161,7 @@ The End. Talaga. Promise.</p>
 
 </body>
 </html>
+
 
 
 
